@@ -9,12 +9,12 @@ class valueer extends Component {
     });
   }
 
-  handleDecrement() {
-    const value = this.state.value === 0 ? 0 : this.state.value - 1;
-    this.setState({
-      value,
-    });
-  }
+  // handleDecrement() {
+  //   const value = this.state.value === 0 ? 0 : this.state.value - 1;
+  //   this.setState({
+  //     value,
+  //   });
+  // }
 
   formatvalue() {
     const { value } = this.state;
@@ -35,9 +35,9 @@ class valueer extends Component {
         </button>
         <button
           className="btn btn-danger btn-sm ml-2"
-          onClick={() => this.handleDecrement()}
+          onClick={() => this.props.onDelete(this.props.id)}
         >
-          Decrement
+          Delete
         </button>
       </div>
     );
