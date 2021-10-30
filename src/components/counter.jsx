@@ -1,30 +1,32 @@
 import React, { Component } from "react";
 
-class Counter extends Component {
-  state = { count: 0 };
+class valueer extends Component {
+  state = { value: this.props.value };
 
   handleIncrement() {
     this.setState({
-      count: this.state.count + 1,
+      value: this.state.value + 1,
     });
   }
 
   handleDecrement() {
-    const count = this.state.count === 0 ? 0 : this.state.count - 1;
+    const value = this.state.value === 0 ? 0 : this.state.value - 1;
     this.setState({
-      count,
+      value,
     });
   }
 
-  formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+  formatvalue() {
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 
   render() {
     return (
-      <React.Fragment>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+      <div className="mt-2">
+        <span style={{ width: "50px" }} className={this.getBadgeClasses()}>
+          {this.formatvalue()}
+        </span>
         <button
           className="btn btn-secondary btn-sm ml-2"
           onClick={() => this.handleIncrement()}
@@ -37,15 +39,15 @@ class Counter extends Component {
         >
           Decrement
         </button>
-      </React.Fragment>
+      </div>
     );
   }
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   }
 }
 
-export default Counter;
+export default valueer;
