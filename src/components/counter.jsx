@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-class valueer extends Component {
-  formatvalue() {
+class Counter extends Component {
+  formatValue() {
     const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
   }
@@ -10,7 +10,7 @@ class valueer extends Component {
     return (
       <div className="row p-2">
         <div className="col-2">
-          <span className={this.getBadgeClasses()}>{this.formatvalue()}</span>
+          <span className={this.getBadgeClasses()}>{this.formatValue()}</span>
         </div>
         <div className="col">
           <button
@@ -45,4 +45,4 @@ class valueer extends Component {
   }
 }
 
-export default valueer;
+export default Counter;
